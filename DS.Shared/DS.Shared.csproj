@@ -2,12 +2,20 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>12.0</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Title>DS.Shared</Title>
+        <Authors>HackZers</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+        <Description>
+            Разные вспомогательные классы.
+        </Description>
+        <PackageTags>
+            .net c#
+        </PackageTags>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Folder Include="Helpers\" />
-    </ItemGroup>
 
 </Project>
