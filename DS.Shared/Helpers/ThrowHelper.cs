@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 
 namespace DS.Shared;
@@ -70,6 +71,24 @@ public static class ThrowHelper
 		// 0 - значение я равны
 		// 1 - текущее значение больше переданного
 		if (argument.CompareTo(startRange) == -1 || argument.CompareTo(endRange) == 1)
+		{
+			throw new ArgumentOutOfRangeException(paramName);
+		}
+	}
+
+	/// <summary>
+	///     Проверяет, что аргумент не равен 0 и меньше.
+	/// </summary>
+	/// <param name="argument">Аргумент.</param>
+	/// <param name="paramName">Наименование аргумента.</param>
+	/// <exception cref="ArgumentNullException">Выбрасывается если аргумент равен null.</exception>
+	/// <exception cref="ArgumentException">Выбрасывается если аргумент пустой или содержит только пробелы.</exception>
+	public static void ArgumentNegativeOrZero<T>(
+		T argument,
+		[CallerArgumentExpression("argument")] string? paramName = null
+	) where T : INumberBase<T>
+	{
+		if (T.IsNegative(argument) || T.IsZero(argument))
 		{
 			throw new ArgumentOutOfRangeException(paramName);
 		}
