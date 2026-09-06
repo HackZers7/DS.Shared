@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="DS.Shared/DS.Shared.csproj" />
+    <Project Path="Tests\DS.Shared.Tests\DS.Shared.Tests.csproj" />
+</Solution>
